@@ -68,8 +68,16 @@ diseases_list = {15: 'Fungal infection', 4: 'Allergy', 16: 'GERD', 9: 'Chronic c
 
 
 def get_predicted_disease_value(patient_symptoms):
-    input_vector = np.zeros(len(symptoms_dict))
+    # Check if all input symptoms are valid
+    invalid_symptoms = [
+        symptom for symptom in patient_symptoms if symptom not in symptoms_dict]
 
+    if invalid_symptoms:
+        # Return an error message if there are invalid symptoms
+        return f"Error: The following symptoms are not recognized: {', '.join(invalid_symptoms)}"
+
+    # Proceed with prediction if all symptoms are valid
+    input_vector = np.zeros(len(symptoms_dict))
     for item in patient_symptoms:
         input_vector[symptoms_dict[item]] = 1
     return diseases_list[svc.predict([input_vector])[0]]
