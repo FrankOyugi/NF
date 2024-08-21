@@ -2,14 +2,40 @@ from flask import Flask, request, render_template
 import numpy as np
 import pandas as pd
 import pickle
+import os
+
+import os
+
+# Get the absolute path to the directory containing the script
+base_dir = os.path.dirname(os.path.abspath(__file__))
+
+# Define file paths
+precautions_file_path = os.path.join(base_dir, 'Dataset', 'precautions_df.csv')
+symptoms_file_path = os.path.join(base_dir, 'Dataset', 'symtoms_df.csv')
+descriptions_file_path = os.path.join(base_dir, 'Dataset', 'description.csv')
+medications_file_path = os.path.join(base_dir, 'Dataset', 'medications_df.csv')
+training_file_path = os.path.join(base_dir, 'Dataset', 'Training.csv')
+
+
+# reading the files 
+
+precautions_df = pd.read_csv(precautions_file_path)
+symptoms_df = pd.read_csv(symptoms_file_path)
+medications_df = pd.read_csv(medications_file_path)
+descriptions_df = pd.read_csv(descriptions_file_path)
+training_df = pd.read_csv(training_file_path)
+
 
 
 # load database========
-# symptoms_df = pd.read_csv("Dataset\symptoms_df.csv")
-precautions_df = pd.read_csv("Dataset\\precautions_df.csv")
-descriptions_df = pd.read_csv("Dataset\\description.csv")
-medications_df = pd.read_csv("Dataset\\medications.csv")
-training_df = pd.read_csv("Dataset\\Training.csv")
+# symptoms_df = pd.read_csv("Dataset\\symptoms_df.csv")
+# precautions_df = pd.read_csv("Dataset\\precautions_df.csv")
+# descriptions_df = pd.read_csv("Dataset\\description.csv")
+# medications_df = pd.read_csv("Dataset\\medications.csv")
+# training_df = pd.read_csv("Dataset\\Training.csv")
+
+
+
 
 
 # load model========
