@@ -13,7 +13,7 @@ base_dir = os.path.dirname(os.path.abspath(__file__))
 precautions_file_path = os.path.join(base_dir, 'Dataset', 'precautions_df.csv')
 symptoms_file_path = os.path.join(base_dir, 'Dataset', 'symtoms_df.csv')
 descriptions_file_path = os.path.join(base_dir, 'Dataset', 'description.csv')
-medications_file_path = os.path.join(base_dir, 'Dataset', 'medications_df.csv')
+medications_file_path = os.path.join(base_dir, 'Dataset', 'medications.csv')
 training_file_path = os.path.join(base_dir, 'Dataset', 'Training.csv')
 
 
