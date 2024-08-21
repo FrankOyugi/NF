@@ -49,6 +49,15 @@
       </form>
     </div>
 
+    <!-- Display error message if it exists -->
+    {% if error_message %}
+    <div class="container mt-4">
+      <div class="alert alert-danger">
+        <strong>Error:</strong> {{ error_message }}
+      </div>
+    </div>
+    {% endif %}
+
     {% if predicted_dis %}
     <h1 class="text-center mt-4 my-4">Results</h1>
     <div class="container">
