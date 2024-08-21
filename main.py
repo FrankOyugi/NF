@@ -5,7 +5,7 @@ import pickle
 
 
 # load database========
-symptoms_df = pd.read_csv("Dataset\symtoms_df.csv")
+# symptoms_df = pd.read_csv("Dataset\symptoms_df.csv")
 precautions_df = pd.read_csv("Dataset\precautions_df.csv")
 descriptions_df = pd.read_csv("Dataset\description.csv")
 medications_df = pd.read_csv("Dataset\medications.csv")
